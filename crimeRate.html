@@ -29,6 +29,19 @@
 		    <link rel="stylesheet" href="css/ion.rangeSlider.skinFlat.css" />
 			<link rel="stylesheet" href="css/bootstrap.css">
 			<link rel="stylesheet" href="css/main.css">
+            
+             <!--Start Scripts-->
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/series-label.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+        <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+        
+        
+        <!-End Scripts -->
 		</head>
 		<body>
 
@@ -224,8 +237,29 @@
         
                  <div align="center"> <img  height="100" src="img/ads/ad2.png"></div> 
                 <a name="graphs"></a>
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
+            <br>
+             <br>
+             <br>
+                <div id="container1" align="center"></div>
+                <div id="sliders">
+                    <table>
+                        <tr>
+                            <td>Alpha Angle</td>
+                            <td><input id="alpha" type="range" min="0" max="45" value="15"/> <span id="alpha-value" class="value"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Beta Angle</td>
+                            <td><input id="beta" type="range" min="-45" max="45" value="15"/> <span id="beta-value" class="value"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Depth</td>
+                            <td><input id="depth" type="range" min="20" max="100" value="50"/> <span id="depth-value" class="value"></span></td>
+                        </tr>
+                    </table>
+                </div>
+            <br>
+             <br>
+             <br>
 	         <!-- start footer Area -->		
 				<footer class="footer-area section-gap">
 					<div class="container">
@@ -291,7 +325,116 @@
 				</footer>
         
 				<!-- End footer Area -->		
-		
+		<script>
+
+//Set up the chart
+var chart = new Highcharts.Chart({
+ chart: {
+     renderTo: 'container1',
+     type: 'column',
+     options3d: {
+         enabled: true,
+         alpha: 15,
+         beta: 15,
+         depth: 50,
+         viewDistance: 25
+     }
+ },
+ 
+ title: {
+     text: 'Crime Rate'
+ },
+ subtitle: {
+     text: 'Incidents Reported'
+ },
+ xAxis: {
+     categories: ['2013', '2014', '2015', '2016', '2017'],
+     labels: {
+         skew3d: true,
+         style: {
+             fontSize: '16px'
+         }
+     }
+ },
+ plotOptions: {
+     column: {
+         depth: 25
+     }
+ },
+ 
+ series: 
+	 [{
+	        name: 'North Melbourne',
+	        data: [5419,	4766,	5466,	6017,	5444
+	 
+	]
+	    }, {
+	        name: 'Fitzroy',
+	        data: [12276,	10856,	11769,	11626,	10673
+	]
+	    }, {
+	        name: 'North-Fitzroy',
+	        data: [9773,	9542,	10417,	11400,	9992
+	]
+	    }, {
+	        name: 'Clifton Hill',
+	        data: [4722,	4588,	4638,	4241,	3981
+	 
+	]
+	    }, {
+	        name: 'NorthCote',
+	        data: [10670,	11080,	12740,	13473,	12141
+	 
+	]
+	    },
+	    {
+	        name: 'Brunswick',
+	        data: [5801,	5374,	6114,	6013,	5437
+	 
+	]
+	    },
+	    {
+	        name: 'Coburg',
+	        data: [16537,	15981,	18673,	21419,	20218
+
+	]
+	    },
+	    {
+	        name: 'Preston',
+	        data: [6450,	6518,	7638,	7542,	6459
+	 
+	]
+	    },
+	    {
+	        name: 'Thornbury',
+	        data: [5518,	5755,	6214,	6508,	5572
+	 
+	]
+	    },
+	    {
+	        name: 'Fairfield',
+	        data: [8765	,9324,	9964,	10198,	9490
+	 
+	]
+	    }]
+ 
+});
+
+function showValues() {
+ $('#alpha-value').html(chart.options.chart.options3d.alpha);
+ $('#beta-value').html(chart.options.chart.options3d.beta);
+ $('#depth-value').html(chart.options.chart.options3d.depth);
+}
+
+//Activate the sliders
+$('#sliders input').on('input change', function () {
+ chart.options.chart.options3d[this.id] = parseFloat(this.value);
+ showValues();
+ chart.redraw(false);
+});
+
+showValues();
+</script>
 
 			<script src="js/vendor/jquery-2.2.4.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>

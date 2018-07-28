@@ -29,6 +29,19 @@
 		    <link rel="stylesheet" href="css/ion.rangeSlider.skinFlat.css" />
 			<link rel="stylesheet" href="css/bootstrap.css">
 			<link rel="stylesheet" href="css/main.css">
+        
+         <!--Start Scripts-->
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/series-label.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+        <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+        
+        
+        <!-End Scripts -->
 		</head>
 		<body>
 
@@ -267,7 +280,7 @@
         
                  <div align="center"> <img  height="100" src="img/ads/ad2.png"></div> 
             <a name="graphs"></a>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><div id="container2"></div><br><br><br><br>
              
 	         <!-- start footer Area -->		
 				<footer class="footer-area section-gap">
@@ -334,7 +347,38 @@
 				</footer>
         
 				<!-- End footer Area -->		
-			
+			<script type="text/javascript">
+Highcharts.chart('container2', {
+    chart: {
+        type: 'bar'
+    },
+    title: {
+        text: 'Food Accessibility'
+    },
+    xAxis: {
+        categories: ['North Melbourne', 'Fitzroy', 'North Fitzroy', 'Clifton Hill', 'NorthCote','Brunswick','Coborg','Preston','Thronbury','Fairfield']
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Total number of grocery stores'
+        }
+    },
+    legend: {
+        reversed: true
+    },
+    plotOptions: {
+        series: {
+            stacking: 'normal'
+        }
+    },
+    series: [{
+        name: 'Coles',
+        data: [14, 13, 12, 10, 13,8,11,15,9,7]
+    }, {        name: 'Woolsworth',
+        data: [10, 10, 10, 9, 10,10,10,10,10,10]
+    }]
+});</script>
 
 			<script src="js/vendor/jquery-2.2.4.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
