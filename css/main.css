@@ -11,33 +11,34 @@ html, body {
     overflow-x: hidden;
 }
 
-	#container {
-	min-width: 310px;
-	max-width: 600px;
-	height: 400px;
-	margin: 0;
-}
+            #container {
+            min-width: 310px;
+            max-width: 600px;
+            height: 400px;
+            margin: 0;
+        }
 
-	#container3 {
-	min-width: 310px;
-	max-width: 600px;
-	height: 400px;
-	margin: 50px;
-}
+            #container3 {
+            min-width: 310px;
+            max-width: 600px;
+            height: 400px;
+            margin: 50px;
+        }
 
-#container1, #sliders {
-    min-width: 310px; 
-    max-width: 800px;
-    margin: 0 auto;
-}
-#container1 {
-    height: 400px; 
-}
-   
- #map {
-        height: 400px;  /* The height is 400 pixels */
-        width: 100%;  /* The width is the width of the web page */
-            }
+        #container1, #sliders {
+            min-width: 310px; 
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        #container1 {
+            height: 400px; 
+        }
+
+         #map {
+                height: 400px;  /* The height is 400 pixels */
+                width: 100%;  /* The width is the width of the web page */
+                    }
+                    
 ::-moz-selection {
   /* Code for Firefox */
   background-color: #f41068;

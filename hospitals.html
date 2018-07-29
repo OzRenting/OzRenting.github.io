@@ -123,9 +123,48 @@
             
             
             <!-- Start Google Maps Mock Up Area -->
-        
+          <div id="map"></div>
+             <script type="text/javascript">
+                        function initAutocomplete() {
 
-			 <!-- End Google Maps Area -->	
+               
+                 var uluru = {lat: -37.7963, lng: 144.9614};
+                  // The map, centered at Uluru
+                  var map = new google.maps.Map(
+                      document.getElementById('map'), {zoom: 13, center: uluru});
+                  // The marker, positioned at Uluru
+                 var marker = new google.maps.Marker({position: uluru, map: map});
+            var beaches = [
+              ['North Melbourne', -37.8, 144.96667, 4],
+              ['Fitzroy', -37.8045, 144.979, 5],
+              ['North Fitzroy', -37.78862, 144.97885, 3],
+              ['Clifton Hill', -37.79798, 144.99533, 2],
+              ['North Cote', -37.76667, 145, 1],
+              ['Brunswick', -37.76667, 144.96667, 1],
+              ['Coburg', -37.75, 144.96667, 1],
+              ['Preston', -37.75, 145.01667, 1],
+              ['Thornbury', -37.75, 145, 1],
+              ['University of Melbourne', -37.7963, 144.9614, 1]
+            ];
+
+            for (var i = 0; i < beaches.length; i++) {
+                var beach = beaches[i];
+                var marker = new google.maps.Marker({
+                  position: {lat: beach[1], lng: beach[2]},
+                  map: map,
+                  title: beach[0],
+                  zIndex: beach[3]
+                });
+              }
+
+
+            }</script>
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdoxcz2Tl0MxFIEyf8AISEvd6fxXFcdWU&callback=initAutocomplete&region=Au"
+            type="text/javascript"></script>
+            
+
+
+			 <!-- End Google Maps Area -->
             
             
                   <!-- Ranking  -->	
