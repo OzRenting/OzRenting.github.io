@@ -41,7 +41,7 @@
 							<ul class="list">
 
 								<li><a href="rent.html">Rent Property</a></li>
-								<li><a href="login.html">login / register</a></li>
+								<li><a href="login.html">signup / register</a></li>
 							</ul>
 						</div>
 					</div>					
@@ -58,11 +58,13 @@
 
 						  <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
 						    <ul class="navbar-nav">
+                                <li><a href="index.html">Home</a></li>
                                  <li><a href="rent.html">Rent</a></li>
 	                            <li><a href="hospitals.html">Hospitals</a></li>
 								<li><a href="transportation.html">Transportation</a></li>
 								<li><a href="crimeRate.html">Crime Rate</a></li>
                                 <li><a href="cafe.html">Landmarks</a></li>
+                                <li><a href="login.html">login</a></li>
 						    </ul>
 						  </div>						
 					</div>
@@ -75,6 +77,7 @@
 				<div class="row height align-items-center justify-content-center">
 					<div class="col-lg-10">
 						<div class="generic-banner-content">
+                             <br> <br> <br> <br> <br> <br> <br> <br>
 							<h2 class="text-white text-center">The Quickest Public Transportation near...</h2>
 							<p class="text-white">A ranking of the best suburbs in Melbourne for International students.</p>
                             <div class="form-select" id="default-select">
@@ -88,33 +91,44 @@
                                                 <option value="1">La Trobe University</option>
                                                 <option value="1">Select Your University</option>
 											</select>
-                                	<div class="button-group-area mt-10" align="center">
-						              <a href="#" class="genric-btn primary-border e-large">Search</a>
+                                  <br> <br> 
+                                	<div class="button-group-area mt-5" align="center">
+						                      <a href="#graphs" class="genric-btn primary-border e-large">Search</a>
                                     </div>
+				         
 				            </div>
 						</div>							
 					</div>
 				</div>
 			</div>
+                  <br> <br> <br> <br> <br>  <br> <br> <br> <br> <br>
 			</section>		
 			<!-- End banner Area -->		
             
-	<!-- Start Google Maps Mock Up Area -->
+	
             <br><br><br><br><br>
             <h1 align="center">Locations Around You!</h1>
             <br><br><br><br><br>
             
-			<section class="contact-area" id="contact">
-				<div class="container-fluid">
-					<div class="row align-items-center d-flex justify-content-start">
-			
-	      					<div style=" width:100%; height: 545px;" id="map"></div>
-						</div>
-						
-		
-				</div>
-			</section>
-			<!-- End Contact Area -->	
+			 <!-- Start Google Maps Mock Up Area -->
+          
+                <script type="text/javascript">
+                function initAutocomplete() {
+
+                     var uluru = {lat: -36.686043, lng: 143.580322};
+                      // The map, centered at Uluru
+                      var map = new google.maps.Map(
+                          document.getElementById('map'), {zoom: 5, center: uluru});
+                      // The marker, positioned at Uluru
+                      var marker = new google.maps.Marker({position: uluru, map: map});
+                }</script>
+                 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdoxcz2Tl0MxFIEyf8AISEvd6fxXFcdWU&callback=initAutocomplete&region=Au"
+                type="text/javascript"></script>
+                <div id="map"  ></div>
+
+
+
+			 <!-- End Google Maps Area -->	
                   <!-- Ranking  -->	
                 
 				<div class="section-top-border">
@@ -209,6 +223,7 @@
 				<!-- End city Area -->
         
                  <div align="center"> <img  height="100" src="img/ads/ad2.png"></div> 
+                <a name="graphs"></a>
                 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 	         <!-- start footer Area -->		
@@ -219,7 +234,7 @@
 								<div class="single-footer-widget">
 									<h6>About Us</h6>
 									<p>
-										Developing a Website to improve experience of International Students in choosing which suburbs to live in based on several conditions.
+										Developing a Website to improve experience of University Students in choosing which suburbs to live in with exciting offers.
 									</p>
 								</div>
 							</div>
@@ -260,8 +275,8 @@
 									<h6>Follow Us</h6>
 									<p>Let us be social</p>
 									<div class="footer-social d-flex align-items-center">
-										<a href="#"><i class="fa fa-facebook"></i></a>
-										<a href="#"><i class="fa fa-twitter"></i></a>
+										<a href="https://www.facebook.com/OzRenting-219947705392320/?modal=admin_todo_tour"><i class="fa fa-facebook"></i></a>
+										<a href="https://twitter.com/OzRenting"><i class="fa fa-twitter"></i></a>
 
 									</div>
 								</div>
