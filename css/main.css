@@ -2951,7 +2951,7 @@ h6 {
 }
 
 .generic-banner {
-  background-color: #f41068;
+   background: url(../img/header-bg.jpg) no-repeat center center/cover;
 }
 
 .generic-banner .height {
