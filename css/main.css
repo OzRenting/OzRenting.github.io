@@ -11,6 +11,7 @@ html, body {
     overflow-x: hidden;
 }
 
+
             #container {
             min-width: 310px;
             max-width: 600px;
@@ -39,6 +40,7 @@ html, body {
                 width: 100%;  /* The width is the width of the web page */
                     }
                     
+
 ::-moz-selection {
   /* Code for Firefox */
   background-color: #f41068;
